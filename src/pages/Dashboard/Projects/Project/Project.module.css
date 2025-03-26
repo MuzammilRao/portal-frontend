@@ -1,0 +1,299 @@
+.container {
+  position: relative;
+}
+
+.container > h1 {
+  margin: 0.685rem 0;
+  color: #1b9de4;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 1rem;
+}
+.top > .topLeft {
+  display: flex;
+  align-items: center;
+}
+.top > .topLeft > button {
+  padding: 10px 15px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  color: #ffffff;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.top > .topLeft > button:hover {
+  background-color: #1b9de4;
+  color: #ffffff !important;
+  border: 1px solid #1b9de4 !important;
+}
+
+.top > .topLeft > button:nth-child(1) {
+  /* background-color: #6bdb65; */
+}
+
+.top > .topLeft > button:nth-child(1),
+.top > .topLeft > button:nth-child(2),
+.top > .topLeft > button:nth-child(3) {
+  border: 1px solid #0c4767;
+  color: #6c6c6c;
+}
+
+.topRight > select {
+  border: 1px solid #0c4767;
+  color: #6c6c6c;
+  padding: 8px 20px;
+  background: transparent;
+  border-radius: 6px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.topRight > select > option {
+  background-color: #1b9de4;
+  color: #ffffff;
+}
+
+.top > .topRight {
+  display: flex;
+  align-items: center;
+}
+.top > .topRight > isLoading .popup1 {
+  z-index: 999 !important;
+  position: absolute !important;
+  /* font-size: 2rem; */
+  color: grey !important;
+  /* top: 20.5rem; */
+  right: 20px !important;
+  background-color: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.75) !important;
+  -webkit-box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.75) !important;
+  /* padding: 10px 20px; */
+  /* width: 120px;
+  height: 90px; */
+  border-radius: 8px !important;
+  /* align-items: center; */
+}
+.popup1 > div {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  cursor: pointer;
+  padding: 3px 20px 3px 20px;
+  /* margin-left: 20px; */
+  text-transform: capitalize;
+}
+.popup1 > div:hover {
+  /* background-color: rgb(19, 125, 167); */
+  background-color: #1b9de4;
+  width: 100% !important;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+.popup1 > div:last-child > a {
+  color: grey !important;
+}
+.popup1 > div:last-child > a:hover {
+  color: #ffffff !important;
+}
+
+/****************Table styling *****************/
+/* table{
+    background-color: #0C4767;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+th {
+    padding: 8px;
+}
+
+td {
+    padding: 12px ;
+
+}
+
+thead{
+    background-color: #9456d9;
+}
+
+tbody tr{
+    margin: 1rem 0;
+}
+
+tbody {
+    padding: 8px;
+}
+
+thead tr {
+    background: #9456D9;
+}
+tr td{
+    padding: 20px;
+} */
+
+.project_dashboard_table {
+  /* border: 1px solid red; */
+  margin-top: 2rem;
+}
+.project_dashboard_table > table {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* align-items: center; */
+  border-collapse: collapse;
+  padding-left: 0;
+}
+.table__header > th {
+  font-weight: 100 !important;
+  font-size: 15px;
+  /* margin-bottom: 20px!important; */
+  padding: 9px 0;
+  background-color: #1b9de4;
+  /* border: 1px solid red; */
+}
+.table__row {
+  /* border: 1px solid red; */
+  margin-top: 10px;
+  padding-top: 25px;
+  border: 1px solid #818181;
+  background-color: #0c4767;
+  cursor: pointer;
+}
+.table__row td {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  border-collapse: collapse;
+  /* margin-top: 20px; */
+  font-weight: 300;
+}
+.gfg {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  /* border: 1px solid red; */
+}
+.linearProgress {
+  /* border: 1px solid red; */
+  width: 150px;
+}
+
+.select_container > select {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 5px 3px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  background-color: #1b9de4;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn > img {
+  margin-right: 0.5rem;
+  height: 12px;
+}
+.select_btn > Button {
+  background-color: #1b9de4 !important;
+  border: 1px solid #1b9de4;
+  cursor: pointer;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  text-transform: capitalize;
+  color: #ffffff !important;
+}
+.modal__container {
+  border: 1px solid red;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal__container > .modal__inner {
+  border: 1px solid red;
+  background-color: #ffffff;
+  color: #333;
+}
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin: 20px 0 0 0;
+  /* border: 1px solid red; */
+  border-radius: 5px;
+}
+.updateLink {
+  color: #fff;
+  text-decoration: none;
+}
+.updateLink:hover {
+  color: #1b9de4;
+}
+
+@media screen and (max-width: 1023.8px) {
+  .table__header > th {
+    font-size: 12px;
+  }
+  .project_dashboard_table {
+    overflow-x: scroll;
+  }
+  .project_dashboard_table > table {
+    width: 780px;
+  }
+  .table__row td {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 767.8px) {
+  .top > .topLeft > button,
+  .topRight > select {
+    font-size: 11px;
+  }
+  /* {
+    font-size: 11px;
+    margin-right: 0;
+  } */
+  /* .project_dashboard_table {
+  overflow-x: scroll;
+  }
+  .project_dashboard_table > table {
+   width: 585px;
+  } */
+}
+@media screen and (max-width: 612px) {
+  .top > .topLeft,
+  .top > .topRight {
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    gap: 40px;
+  }
+  .top > .topLeft > button,
+  .topRight > select {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,59 @@
+.heading {
+  width: 40%;
+  /* border: 1px solid red; */
+}
+
+.heading > h1 {
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #111;
+  font-size: 2rem;
+}
+
+.heading > p {
+  font-size: 13.5px;
+  margin: 20px 0 20px 0;
+}
+
+.heading > button {
+  color: #7656cf;
+  background: transparent;
+  border: none;
+  padding: 10px 13px;
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.heading > button > img {
+  height: 9px;
+  margin-left: 5px;
+}
+@media (max-width: 768px) {
+  .heading > h1 {
+    font-size: 1rem;
+  }
+  .heading > p {
+    margin: 8px 0 20px 0;
+  }
+}
+@media (max-width: 660px) {
+  .heading {
+    width: 100%;
+    order: 2;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .heading {
+    width: 100%;
+    order: 2;
+    text-align: center;
+  }
+  .heading > h1 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+}

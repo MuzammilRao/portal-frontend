@@ -1,0 +1,49 @@
+.main {
+}
+
+.navbar {
+  background: linear-gradient(180deg, #101010 0%, #333333 100%);
+  padding: 18px 0;
+}
+
+.navbar__nav {
+  max-width: 80%;
+  margin: 0 auto;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.backIcon:hover {
+  cursor: pointer;
+  scale: 120%;
+}
+
+.nav__logo > a > img {
+  height: 60px;
+  width: 100%;
+}
+
+.terms {
+  max-width: 80%;
+  margin: 4rem auto;
+}
+
+.terms p {
+  margin: 1rem auto;
+  text-align: justify;
+}
+
+@media screen and (max-width: 771px) {
+  .nav__logo {
+    display: none;
+  }
+}

@@ -1,0 +1,42 @@
+.payBtn {
+  background: #fff;
+  color: #296fa8;
+  padding: 4px 6px;
+  border: 1.5px solid #296fa8;
+  border-radius: 6px;
+  max-width: fit-content;
+}
+.payBtn:hover {
+  background: #296fa8;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mainContainer {
+}
+.confirmationContainer {
+  padding: 2rem 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.confirmationContainer button {
+  width: 60px;
+}
+.cancelButton {
+  font-weight: 500;
+  border: 1px solid #296fa8;
+  background: #296fa8;
+  color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cancelButton:hover {
+  background: white;
+  color: #296fa8;
+  cursor: pointer;
+}

@@ -1,0 +1,142 @@
+.container{
+    padding: 20px 0;
+}
+.container > .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  
+  .container > .heading > h1 {
+    margin: 0.685rem 0;
+    color: #1b9de4;
+  }
+
+  .imageInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #1b9de4;
+    background: rgba(255, 255, 255, 0.09);
+    padding: 30px 0;
+    border-radius: 4px;
+    width: 65%;
+    text-align: center;
+  }
+  
+  .imageInput > .signatureSpan,
+  .imageInput > .sizeSpan {
+    font-size: 12px;
+  }
+  
+  .imageInput > .sizeSpan {
+    opacity: 0.62;
+    font-weight: 100;
+  }
+  
+  .imageInput > label > span {
+    color: #ffffff;
+    background: #1b9de4;
+    padding: 5px 25px;
+    border-radius: 25px;
+    font-size: 11px;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  
+.form__container {
+  background-color: #0c4767;
+  padding: 30px 30px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.form__control {
+  width: 100% !important;
+}
+
+.form__control > .inputContainer {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.inputContainer > label {
+  width: 50% !important;
+}
+
+.textArea > label > span,
+.inputContainer > label > span .inputContainer > label > div > span {
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: #f3eeee;
+  margin-bottom: 10px;
+}
+
+.inputContainer > label > input {
+  border: 2px solid #1b9de4;
+  padding: 10px;
+  border-radius: 5px;
+  color: #000;
+  width: 95% !important;
+}
+.inputContainer > input {
+  border: 2px solid #1b9de4;
+  padding: 10px;
+  border-radius: 5px;
+  color: #000;
+  width: 95% !important;
+}
+
+.inputContainer > label > input::placeholder {
+  color: #746c6c;
+}
+
+.form__control > button,
+.btn {
+  color: #ffffff;
+  background: #1b9de4;
+  padding: 10px 30px;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 4px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.client__image {
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+  }
+  
+  .imgPreview {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #1b9de4;
+    border-radius: 5px;
+    color: gray;
+    height: 100%;
+  }
+  
+  .imgPreview > span {
+    color: grey;
+  }
+  
+  .imgPreview > .image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: none !important;
+    border-radius: 0 !important;
+    border: none;
+  }

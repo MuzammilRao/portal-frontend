@@ -1,0 +1,437 @@
+.heading {
+  margin: 0.685rem 0;
+  color: #F04E23;
+}
+
+.leisure {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.balance,
+.income,
+.outcome,
+.limit {
+  flex: 1 1 250px;
+  /* margin-right: 20px; */
+}
+/* *********Balance styling************ */
+
+.leisure > .balance {
+  /* border: 1px solid red; */
+  padding: 20px;
+  border-radius: 12px;
+  /* width: 25%; */
+  background: #333333;
+  position: relative;
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top > span {
+  font-size: 0.85rem;
+  font-weight: 200 !important;
+}
+.top > img {
+  height: 35px;
+}
+
+.balanceCount {
+  font-size: 1.6rem;
+}
+
+.bottom {
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: space-between;
+  margin-top: 1.6rem;
+}
+
+.bottom > .validation {
+  font-size: 10px;
+}
+.validation > span:first-child {
+  font-weight: 300;
+  margin-bottom: 0.35rem;
+  color: rgb(187, 187, 187) !important ;
+}
+.bottom > .cardNumber {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.maskingImage {
+  position: absolute;
+  bottom: -7px;
+  right: 0;
+}
+.maskingImage > img {
+  height: 180px;
+  width: 100%;
+}
+
+/* *********Income styling************ */
+.leisure > .income {
+  /* border: 1px solid red; */
+  padding: 20px;
+  border-radius: 12px;
+  /* width: 20%; */
+  background: #333333;
+  position: relative;
+}
+.incomeChart,
+.outcomeChart {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+.income > .top > img {
+  height: 22px;
+}
+
+/* *********Outcome styling*************/
+.leisure > .outcome {
+  /* border: 1px solid red; */
+  padding: 20px;
+  border-radius: 12px;
+  /* width: 20%; */
+  background: #333333;
+  position: relative;
+}
+
+.outcome > .top > img {
+  height: 22px;
+}
+
+/* *********Outcome styling*************/
+
+.limit {
+  padding: 20px;
+  border-radius: 12px;
+  /* width: 13%; */
+  background: #333333;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.limit > span {
+  font-size: 1rem;
+  font-weight: 400 !important;
+  text-align: center;
+}
+.circularProgress {
+  width: 100px;
+  height: 100px;
+  margin-top: 15px;
+}
+
+.incomeChart > img,
+.outcomeChart > img {
+  width: 100%;
+  /* margin-top: 5px; */
+  height: 70px;
+}
+
+/* ***********second Bar chart section styling*********** */
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+/* 
+.transactionOverview {
+  margin-right: 2rem;
+} */
+.transactionOverview > h1 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.barchart {
+  width: 100% !important;
+  height: 100% !important;
+  /* border: 1px solid red; */
+  padding-top: 1rem;
+}
+
+.transactionOverview,
+.invoiceHistory {
+  flex: 1 1 300px;
+  /* border: 1px solid red; */
+  background-color: #333333;
+  padding: 15px;
+  border-radius: 12px;
+}
+/* .invoiceHistory{
+  width: 47%;
+  background-color: #333333;
+  padding: 20;
+} */
+.invoiceHistory > .top {
+  display: flex;
+  justify-content: space-between;
+}
+.invoiceHistory > .top > img {
+  height: 20px;
+}
+.progressMain {
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: space-between;
+  margin-top: 0.7rem;
+  gap: 10px;
+}
+.progressMain > div {
+  /* width: 48%; */
+  /* border: 1px solid red; */
+  border-radius: 13px;
+  padding: 12px;
+  flex: 1 1 240px;
+}
+.heading > span {
+  font-size: 12px;
+}
+.heading > span:nth-child(2) {
+  margin-top: 5px;
+  font-size: 13px;
+}
+.progressMain > .first {
+  background-color: #9456d9;
+}
+.progressMain > .second {
+  background-color: #ead6b7;
+}
+.second > .heading > span {
+  color: #000000 !important;
+}
+
+.progressMain > .third {
+  background-color: #5e9adb;
+}
+
+.progressMain > .fourth {
+  background-color: #6bdb65;
+}
+
+.circularProgress1 {
+  width: 80px;
+  height: 80px;
+  margin-top: 15px;
+  margin-left: auto;
+}
+
+/************Third invoice and transction details section************/
+.transactionContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.transactionContainer > .first,
+.transactionContainer > .second {
+  flex: 1 1 300px;
+  /* border: 1px solid red; */
+  background-color: #333333;
+  padding: 20px;
+  border-radius: 12px;
+}
+/* .transactionContainer > .first {
+  margin-right: 2rem;
+} */
+
+/*******************************************************/
+.home_dashboard_table {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+  padding: 15px 0;
+}
+
+.home_dashboard_table > table {
+  /* overflow-x: scroll; */
+  border-collapse: collapse;
+  /* margin-bottom: 20px; */
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+}
+
+.header__table th {
+  font-weight: 100 !important;
+  font-size: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #9babc5;
+}
+
+.body__row > td {
+  padding-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  border: 1px solid #ffffff;
+  width: 1.15em;
+  height: 1.15em;
+  border-radius: 0.2em;
+  display: grid;
+  place-content: center;
+}
+input[type='checkbox']::before {
+  content: '';
+  width: 0.75em;
+  height: 0.75em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #ffffff;
+  /* Windows High Contrast Mode */
+}
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+.row_btn > button {
+  background: transparent;
+  border: 1px solid #6bdb65;
+  padding: 6.5px 10px;
+  color: #6bdb65;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* .row_btn>button:hover{
+  background-color: #6BDB65;
+  color:#ffffff;
+} */
+
+/*******************************************************/
+
+.first > .top > img,
+.second > .top > img {
+  height: 20px;
+}
+
+.selectBox > select {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #848fa1;
+  margin: 0.8rem 0;
+}
+
+.invoiceList1,
+.invoiceList2,
+.invoiceList3 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  /* border: 1px solid red; */
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #9babc5;
+}
+.invoiceList1 > .icon,
+.invoiceList3 > .icon {
+  background-color: #6bdb65;
+  padding: 13px 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.invoiceList2 > .icon {
+  background-color: #ee4444;
+  padding: 13px 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.invoiceList1 > .icon > img,
+.invoiceList2 > .icon > img,
+.invoiceList3 > .icon > img {
+  height: 22px;
+}
+.invoiceList1 > .title,
+.invoiceList2 > .title,
+.invoiceList3 > .title {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.invoiceList1 > .text,
+.invoiceList2 > .text,
+.invoiceList3 > .text {
+  font-size: 15px;
+  font-weight: 300;
+  color: #9babc5;
+}
+
+.invoiceList1 > .price,
+.invoiceList2 > .price,
+.invoiceList3 > .price {
+  font-size: 14px;
+}
+.invoiceList1 > button,
+.invoiceList2 > button,
+.invoiceList3 > button {
+  padding: 10px 10px;
+  font-size: 0.7rem;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+}
+.invoiceList1 > button {
+  background-color: #6bdb65;
+  color: #ffffff;
+}
+.invoiceList2 > button {
+  background-color: #ee4444;
+  color: #ffffff;
+}
+.invoiceList3 > button {
+  background-color: #f0ca43;
+  color: #ffffff;
+}
+@media screen and (max-width: 880px) {
+  .transactionOverview,
+  .invoiceHistory {
+    width: 100%;
+  }
+  .progressMain {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 660px) {
+  .home_dashboard_table > table {
+    width: 450px;
+  }
+  .transactionContainer > .first,
+  .transactionContainer > .second {
+    overflow-x: scroll;
+  }
+  .invoiceHistory {
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+  .invoiceList1,
+  .invoiceList2,
+  .invoiceList3 {
+    width: 450px;
+  }
+  .header__table th {
+    padding: 0 15px;
+  }
+}

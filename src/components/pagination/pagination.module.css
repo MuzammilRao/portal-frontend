@@ -1,0 +1,23 @@
+.pagination {
+  display: flex;
+  margin: 1rem 0.5rem;
+  gap: 0.5rem;
+  text-align: center;
+}
+.page_item {
+  width: 35px;
+  height: 35px;
+  background-color: #1b9de4;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.page_link {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}

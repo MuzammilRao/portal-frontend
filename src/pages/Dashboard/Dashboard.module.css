@@ -1,0 +1,40 @@
+.container {
+  background-color: #fff;
+  height: 100vh;
+  display: flex;
+  color: #ffffff;
+}
+
+.main_content {
+  width: 100%;
+  padding-left: 20px;
+  overflow: scroll;
+}
+@media screen and (max-width: 1300px) {
+  .container {
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main_content {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .sidebar {
+    width: 14%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container {
+    gap: 0;
+    padding: 1.5rem;
+  }
+  .main_content {
+    width: 100%;
+  }
+  .sidebar {
+    width: 0%;
+  }
+}

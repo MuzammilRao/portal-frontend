@@ -1,0 +1,10 @@
+.bg__gradient1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bg__gradient2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

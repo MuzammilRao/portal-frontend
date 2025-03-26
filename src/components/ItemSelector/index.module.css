@@ -1,0 +1,12 @@
+.tag_container {
+  display: flex;
+  align-items: center;
+  border: 1px solid#4D4D4D;
+  border-radius: 1.5rem;
+  padding: 0.3rem 0.8rem;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+.tag_container span {
+  color: #4d4d4d;
+}

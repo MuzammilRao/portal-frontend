@@ -1,0 +1,169 @@
+.invoiceA4__size {
+  width: 900px;
+
+  margin: 90px auto;
+}
+
+.printTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.printTop > img {
+  height: 150px;
+}
+
+.content_top {
+  display: flex;
+
+  justify-content: space-between;
+}
+.content_top_right {
+  margin-left: 1rem;
+}
+.content_top_left > span,
+.content_top_right > span {
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.middle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3.5rem;
+}
+
+.billedTo {
+  display: flex;
+  align-items: center;
+  border: 1px dotted #777;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.billedTo > span:nth-child(1) {
+  font-size: 2rem !important;
+  color: #777;
+  margin-right: 5px;
+}
+
+.billedTo > span:nth-child(2) {
+  font-size: 1rem !important;
+  color: #333;
+  font-weight: 500;
+}
+
+.middle span {
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* .dueDate,
+.reference {
+  margin-top: 5px;
+} */
+
+.invoiceA4__size > hr {
+  border: none;
+  height: 2px;
+  background-color: #296fa8;
+  margin-top: 3.5rem;
+}
+
+.descContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.description {
+  width: 300px;
+  flex: 0.6;
+}
+
+.descRight {
+  display: flex;
+  flex: 0.4;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.descContainer p {
+  color: #296fa8;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.invoiceCalculation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.invoiceCalculation > .inner {
+  width: 300px;
+  margin-top: 1.5rem;
+}
+
+.inner > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inner > div > P {
+  font-size: 13.5px;
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+.inner > hr {
+  margin: 5px 0;
+}
+
+.para p {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.para p:nth-child(1) {
+  color: #296fa8;
+}
+
+.para p:nth-child(2) {
+  color: #777;
+}
+
+.printButton {
+  padding: 15px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 20px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+  box-shadow: 0 4px 5px 0 rgba(65, 132, 234, 0.75);
+}
+
+.printButton:hover {
+  background-color: #fff;
+  color: #296fa8;
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.printButton:focus {
+  outline: none;
+}
