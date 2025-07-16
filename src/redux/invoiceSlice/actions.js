@@ -4,6 +4,7 @@ import { Delete, get, patch, post } from '../../utils/fetch';
 export const getAllInvoices = createAsyncThunk(
   'invoice/getAllInvoices',
   async (filters, { rejectWithValue }) => {
+    console.log('Fetching all invoices with filters:', filters);
     try {
       const response = await get(`admin/invoice`, filters);
       return response;
@@ -37,6 +38,7 @@ export const deleteInvoiceAdmin = createAsyncThunk(
 export const getUserInvoices = createAsyncThunk(
   'invoice/getUserInvoices',
   async (filters, { rejectWithValue }) => {
+    console.log('Fetching user invoices with filters:', filters);
     try {
       const response = await get(`invoices`, filters);
       return response;

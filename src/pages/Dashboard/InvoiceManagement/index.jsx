@@ -10,6 +10,7 @@ import {
   HStack,
   Heading,
   Input,
+  Select,
   Table,
   Tbody,
   Td,
@@ -46,15 +47,17 @@ const InvoiceComponent = () => {
 
   const [filters, setFilters] = useState({
     page: 1,
-    sort: '',
-    limit: 10,
+    sort: 'asc',
+    limit: 50,
     search: '',
   });
 
-  const handleSearch = (event) => {
-    if (event.key === 'Enter' || event.key === 'Backspace') {
-      setFilters({ ...filters, search: searchInput });
-    }
+  const [pageCount, setPageCount] = useState(0);
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setSearchInput(value);
+    setFilters({ ...filters, search: value });
   };
 
   const handlePageClick = (e) => {
@@ -116,9 +119,23 @@ const InvoiceComponent = () => {
                 color={'brand.secondary'}
                 placeholder="Search..."
                 value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                onKeyDown={handleSearch}
+                onChange={handleInputChange}
+                // onKeyDown={handleSearch}
               />
+
+              {/* <Select
+                width="150px"
+                size="sm"
+                color="black"
+                value={filters.sort}
+                onChange={(e) => setFilters({ ...filters, sort: e.target.value })}
+              >
+                {['asc', 'desc'].map((sort) => (
+                  <option key={sort} value={sort}>
+                    {sort}
+                  </option>
+                ))}
+              </Select> */}
 
               {isCreateAllowed && (
                 <Button
@@ -228,7 +245,7 @@ const InvoiceComponent = () => {
           <Flex justifyContent={'flex-end'}>
             {!!invoices?.length && !!total && (
               <Box>
-                <Flex justifyContent={'center'} alignItems={'center'}>
+                <Flex justifyContent={'center'} alignItems={'center'} gap={2}>
                   <Text fontSize={12} color="brand.primary">
                     Showing {(filters.page - 1) * filters.limit + 1} -{' '}
                     {total < (filters.page - 1) * filters.limit + filters.limit
@@ -236,6 +253,22 @@ const InvoiceComponent = () => {
                       : (filters.page - 1) * filters.limit + filters.limit}
                     &nbsp; of {total}
                   </Text>
+                  <Select
+                    width="80px"
+                    size="sm"
+                    color="black"
+                    value={filters.limit}
+                    onChange={(e) =>
+                      setFilters({ ...filters, limit: Number(e.target.value), page: 1 })
+                    }
+                  >
+                    {[10, 20, 50, 100].map((size) => (
+                      <option key={size} value={size}>
+                        {size}/page
+                      </option>
+                    ))}
+                  </Select>
+
                   <Paginate
                     page={filters.page}
                     count={total}
