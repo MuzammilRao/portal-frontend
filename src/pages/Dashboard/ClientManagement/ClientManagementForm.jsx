@@ -174,7 +174,7 @@ const ClientManagementForm = () => {
               />
             </FormControl>
           </Box>
-          <Box w="45%" mr="30px">
+          {/* <Box w="45%" mr="30px">
             <FormControl my="10px">
               <FormLabel color={'brand.secondary'}>Email * </FormLabel>
               <Input
@@ -273,7 +273,7 @@ const ClientManagementForm = () => {
                 value={formValues.zip}
               />
             </FormControl>
-          </Box>
+          </Box> */}
           <Box w="45%" mr="30px">
             <FormControl my="10px">
               <FormLabel color={'brand.secondary'}>Country</FormLabel>
@@ -299,7 +299,7 @@ const ClientManagementForm = () => {
               </Select>
             </FormControl>
           </Box>
-          <Box w="45%" mr="30px">
+          {/* <Box w="45%" mr="30px">
             <FormControl my="10px">
               <FormLabel color={'brand.secondary'}>Website </FormLabel>
               <Input
@@ -312,7 +312,7 @@ const ClientManagementForm = () => {
                 value={formValues.website}
               />
             </FormControl>
-          </Box>
+          </Box> */}
 
           <Box w="45%" mr="30px">
             <CustomSelect

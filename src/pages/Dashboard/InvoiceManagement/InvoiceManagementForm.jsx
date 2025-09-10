@@ -40,9 +40,14 @@ const InvoiceForm = () => {
   const dispatch = useDispatch();
   const merchants = useSelector((state) => state.merchant.merchants);
   const client = useSelector((state) => state.client.singleClient);
-
+  const filters = {
+    page: 1,
+    sort: '',
+    limit: 1700,
+    search: '',
+  };
   useEffect(() => {
-    dispatch(getAllClients());
+    dispatch(getAllClients(filters));
     dispatch(setSingleClientNull());
   }, [dispatch]);
 

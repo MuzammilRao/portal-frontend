@@ -1,6 +1,7 @@
 const CONSTANTS = Object.freeze({
   ImportApi: 'https://staging.app.zusodental.com/api/',
-  api: process.env.REACT_APP_BASE_URL + '/api/v1/',
+  // api: 'http://10.1.1.16:5000/api/v1/',
+  api: 'https://payment-terminal-7f21383129bf.herokuapp.com/api/v1/',
 
   modules: {
     ADMIN_USER: 'admin-users',
