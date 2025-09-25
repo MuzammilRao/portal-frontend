@@ -14,11 +14,18 @@ import {
   Text,
   VStack,
   Select as ChakraSelect,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalCloseButton,
 } from '@chakra-ui/react';
 import Select from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 import useToast from '../../../hooks/useToast';
-import { setSingleClientNull, getAllClients, getOneClientAdmin } from '../../../redux/clientSlice';
+import { setSingleClientNull, getAllClients, getOneClientAdmin, updateClientAdmin } from '../../../redux/clientSlice';
 import { addInvoiceAdmin } from '../../../redux/invoiceSlice';
 import { initialInvoice, initialProductLine } from '../../../utils/invoice/initialData';
 import EditableInput from '../../../components/Invoice/EditableInput';
@@ -36,6 +43,9 @@ const InvoiceForm = () => {
   const [selectedClient, setSelectedClient] = useState(null);
   const [selectedCurrency, setSelectedCurrency] = useState('USD');
   const [filteredMerchants, setFilteredMerchants] = useState([]);
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+  const [emailInput, setEmailInput] = useState('');
+  const [pendingSubmit, setPendingSubmit] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const merchants = useSelector((state) => state.merchant.merchants);
@@ -56,6 +66,8 @@ const InvoiceForm = () => {
   }, [dispatch]);
 
   const clientSelectHandler = (e) => {
+
+    
     setSelectedClient(e.value);
     dispatch(getOneClientAdmin({ id: e.value })).then((res) => {
       const _client = res?.payload?.data;
@@ -184,6 +196,14 @@ const InvoiceForm = () => {
 
   const formHandler = (e) => {
     e.preventDefault();
+    
+    // Check if clientEmail is missing
+    if (!invoice.clientEmail) {
+      setIsEmailModalOpen(true);
+      setPendingSubmit(true);
+      return;
+    }
+    
     dispatch(addInvoiceAdmin({ payload: invoice }))
       .then((action) => {
         if (addInvoiceAdmin.fulfilled.match(action)) {
@@ -207,6 +227,57 @@ const InvoiceForm = () => {
   const handleMerchantChange = (e) => {
     // console.log(e.target.value);
     setInvoice({ ...invoice, merchant: e.target.value });
+  };
+
+  const handleEmailSubmit = async () => {
+    if (!emailInput) {
+      showErrorToast('Email is required');
+      return;
+    }
+    
+    try {
+      // Update client in backend with new email
+      await dispatch(updateClientAdmin({ 
+        id: invoice.client, 
+        payload: { clientEmail: emailInput } 
+      })).unwrap();
+      
+      // Create updated invoice with the new email
+      const updatedInvoice = { ...invoice, clientEmail: emailInput };
+      
+      // Close modal and reset states
+      setIsEmailModalOpen(false);
+      setEmailInput('');
+      setPendingSubmit(false);
+      
+      // Update invoice state
+      setInvoice(updatedInvoice);
+      
+      // Create invoice directly with updated data
+      dispatch(addInvoiceAdmin({ payload: updatedInvoice }))
+        .then((action) => {
+          if (addInvoiceAdmin.fulfilled.match(action)) {
+            if (action.payload) {
+              showSuccessToast('Invoice Added Successfully.');
+              navigate(-1);
+              return;
+            } else {
+              showErrorToast('Failed to Add Invoice.');
+            }
+          } else {
+            showErrorToast('Failed to Add!');
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          showErrorToast(error?.message);
+        });
+      
+      showSuccessToast('Client email updated successfully');
+    } catch (error) {
+      console.error('Error updating client email:', error);
+      showErrorToast('Failed to update client email');
+    }
   };
 
   const currencySelectHandler = (e) => {
@@ -233,6 +304,40 @@ const InvoiceForm = () => {
 
   return (
     <VStack spacing="6" align="stretch" p="4">
+      {/* Email Modal */}
+      <Modal isOpen={isEmailModalOpen} onClose={() => setIsEmailModalOpen(false)} isCentered size="sm">
+        <ModalOverlay />
+        <ModalContent borderRadius="lg" p={2} boxShadow="lg">
+          <ModalHeader textAlign="center" fontWeight="bold" fontSize="xl" pb={0}>
+            Enter Client Email
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody display="flex" flexDirection="column" alignItems="center" justifyContent="center" py={6}>
+            <Box mb={4} color="gray.500" fontSize="md" textAlign="center">
+              Client Email is Missing, Please provide the client email address to continue creating the invoice. This will also update the client record.
+            </Box>
+            <Input
+              placeholder="Enter client email"
+              value={emailInput}
+              onChange={e => setEmailInput(e.target.value)}
+              type="email"
+              size="md"
+              maxW="300px"
+              borderRadius="md"
+              boxShadow="sm"
+              mb={2}
+              textAlign="center"
+              autoFocus
+            />
+          </ModalBody>
+          <ModalFooter display="flex" justifyContent="center" pb={6}>
+            <Button bg="brand.themeOrange" color="brand.text" onClick={handleEmailSubmit}>
+              Submit
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+      
       <form onSubmit={formHandler}>
         <Flex mb={6} justifyContent="space-between" alignItems="end">
           {/* <DashboardHeading>{!!id ? 'Update Invoice' : 'Create New Invoice'}</DashboardHeading> */}

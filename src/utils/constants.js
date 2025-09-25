@@ -2,6 +2,7 @@ const CONSTANTS = Object.freeze({
   ImportApi: 'https://staging.app.zusodental.com/api/',
   // api: 'http://10.1.1.16:5000/api/v1/',
   api: 'https://payment-terminal-7f21383129bf.herokuapp.com/api/v1/',
+  // api: 'http://localhost:5002/api/v1/',
 
   modules: {
     ADMIN_USER: 'admin-users',
@@ -48,6 +49,7 @@ const CONSTANTS = Object.freeze({
 
   merchants: {
     WI_STRIPE: 'WI_STRIPE',
+    WC_STRIPE: 'WC_STRIPE',
     WIZ_PUB_STRIPE: 'WIZ_PUB_STRIPE',
     WP_MONERIS: 'WP_MONERIS',
     WI_MONERIS: 'WI_MONERIS',

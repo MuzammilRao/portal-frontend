@@ -232,6 +232,13 @@ const ClientInvoice = () => {
                   merchants_api_url={'wi-stripe/create-payment'}
                 />
               )}
+              {invoice?.merchant === CONSTANTS.merchants.WC_STRIPE && (
+                <StripeProvider
+                  invoiceData={invoice}
+                  stripe_publishable_key={process.env.REACT_APP_WC_STRIPE_KEY}
+                  merchants_api_url={'wc-stripe/create-payment'}
+                />
+              )}
               {invoice?.merchant === CONSTANTS.merchants.WIZ_PUB_STRIPE && (
                 <StripeProvider
                   invoiceData={invoice}

@@ -174,7 +174,7 @@ const ClientManagementForm = () => {
               />
             </FormControl>
           </Box>
-          {/* <Box w="45%" mr="30px">
+           <Box w="45%" mr="30px">
             <FormControl my="10px">
               <FormLabel color={'brand.secondary'}>Email * </FormLabel>
               <Input
@@ -189,7 +189,7 @@ const ClientManagementForm = () => {
               />
             </FormControl>
           </Box>
-          <Box w="45%" mr="30px">
+         {/* <Box w="45%" mr="30px">
             <FormControl my="10px">
               <FormLabel color={'brand.secondary'}>Phone * </FormLabel>
               <Input
