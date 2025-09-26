@@ -15,6 +15,8 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     addCaseWithLoading(builder, Actions.loginUser, {
       onCompleted: (state, action) => {
+        console.log('action', action);
+        state.user = action.payload.data;
         state.isLoading = false;
       },
       onPending: (state) => {

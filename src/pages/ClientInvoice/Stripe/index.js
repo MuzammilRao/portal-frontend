@@ -30,6 +30,7 @@ const Stripe = ({ invoiceData, stripe_publishable_key, merchants_api_url, setIsL
           lastName: invoiceData?.clientName,
           email: invoiceData?.clientEmail,
           address: invoiceData?.clientAddress,
+          currencyCode: invoiceData?.currencyCode || 'USD',
           city: invoiceData?.Karachi,
           zip: invoiceData?.clientZip,
           amount: invoiceData?.totalDue,

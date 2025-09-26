@@ -6,6 +6,9 @@ import Stripe from './index';
 const StripeProvider = ({ invoiceData, stripe_publishable_key, merchants_api_url }) => {
   const [enablePayment, setEnablePayment] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  console.log('invoiceData', invoiceData);
+  console.log('stripe_publishable_key', stripe_publishable_key);
+  console.log('merchants_api_url', merchants_api_url);
   return (
     <Box color={'#000'} my={20}>
       {enablePayment && (

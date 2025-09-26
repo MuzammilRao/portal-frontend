@@ -47,7 +47,7 @@ const InvoiceComponent = () => {
 
   const [filters, setFilters] = useState({
     page: 1,
-    sort: 'asc',
+    sort: '-createdAt',
     limit: 50,
     search: '',
   });

@@ -221,7 +221,7 @@ const InvoiceForm = () => {
         return merchant.name !== 'WI_MONERIS_CA';
       }
       if (invoice.currencyCode === 'CAD') {
-        return merchant.name === 'WI_STRIPE' || merchant.name === 'WI_MONERIS_CA';
+        return merchant.name === 'WI_STRIPE' || merchant.name === 'WI_MONERIS_CA' || merchant.name === 'WC_STRIPE';
       }
       return true; // Default case, show all merchants
     });
