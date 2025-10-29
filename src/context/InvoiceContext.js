@@ -58,6 +58,8 @@ const invoiceReducer = (state, action) => {
     case 'GET_BRANDS':
       return { ...state, brands: action.payload };
     case 'GET_MERCHANTS':
+
+    console.log('action.payload?.merchants', action.payload?.merchants);
       return { ...state, merchants: action.payload?.merchants };
     case 'DELETE_BRAND':
       return {

@@ -218,10 +218,10 @@ const InvoiceForm = () => {
     // Filter merchants based on selectedCurrency
     const _filteredMerchants = merchants.filter((merchant) => {
       if (invoice.currencyCode === 'USD') {
-        return merchant.name !== 'WI_MONERIS_CA';
+        return merchant.name !== 'INVENTIX_MONERIS_CA';
       }
       if (invoice.currencyCode === 'CAD') {
-        return merchant.name === 'WI_STRIPE' || merchant.name === 'WI_MONERIS_CA' || merchant.name === 'WC_STRIPE';
+        return merchant.name === 'INVENTIX_STRIPE' || merchant.name === 'INVENTIX_MONERIS_CA' || merchant.name === 'CRAFT_STRIPE';
       }
       return true; // Default case, show all merchants
     });

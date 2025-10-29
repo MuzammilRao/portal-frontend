@@ -1,7 +1,7 @@
 const CONSTANTS = Object.freeze({
   ImportApi: 'https://staging.app.zusodental.com/api/',
   // api: 'http://10.1.1.16:5000/api/v1/',
-  api: 'https://payment-terminal-7f21383129bf.herokuapp.com/api/v1/',
+   api: 'https://payment-terminal-7f21383129bf.herokuapp.com/api/v1/',
   // api: 'http://localhost:5002/api/v1/',
 
   modules: {
@@ -47,14 +47,35 @@ const CONSTANTS = Object.freeze({
     },
   },
 
-  merchants: {
-    WI_STRIPE: 'WI_STRIPE',
-    WC_STRIPE: 'WC_STRIPE',
-    WIZ_PUB_STRIPE: 'WIZ_PUB_STRIPE',
-    WP_MONERIS: 'WP_MONERIS',
-    WI_MONERIS: 'WI_MONERIS',
-    WI_MONERIS_CA: 'WI_MONERIS_CA',
+  // merchants: {
+  //   WI_STRIPE: 'INVENTIX_STRIPE',
+  //   WC_STRIPE: 'WC_STRIPE',
+  //   WIZ_PUB_STRIPE: 'WIZ_PUB_STRIPE',
+  //   WP_MONERIS: 'WP_MONERIS',
+  //   WI_MONERIS: 'WI_MONERIS',
+  //   WI_MONERIS_CA: 'WI_MONERIS_CA',
+  // },
+
+   merchants: {
+    WI_STRIPE: 'INVENTIX_STRIPE',
+    WC_STRIPE: 'CRAFT_STRIPE',
+    WIZ_PUB_STRIPE: 'WIZ_PUBLISHING_STRIPE',
+    WP_MONERIS: 'WIZ_PUBLISHING_MONERIS',
+    WI_MONERIS: 'INVENTIX_MONERIS',
+    WI_MONERIS_CA: 'INVENTIX_MONERIS_CA',
   },
 });
 
 export default CONSTANTS;
+
+
+//  merchants: {
+//     WI_STRIPE: 'INVENTIX_STRIPE',
+//     WC_STRIPE: 'CRAFT_STRIPE',
+//     WIZ_PUB_STRIPE: 'WIZ_PUBLISHING_STRIPE',
+//     WP_MONERIS: 'WIZ_PUBLISHING_MONERIS',
+//     WI_MONERIS: 'INVENTIX_MONERIS',
+//     WI_MONERIS_CA: 'INVENTIX_MONERIS_CA',
+//   },
+
+

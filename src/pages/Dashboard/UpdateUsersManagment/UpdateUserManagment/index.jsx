@@ -23,10 +23,22 @@ import {
   VStack,
   Checkbox,
   HStack,
+  Input,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalCloseButton,
+  InputGroup,
+  InputRightElement,
 } from '@chakra-ui/react';
 import DashboardHeading from '../../../../components/DashboardHeading';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllRoles } from '../../../../redux/roleSlice';
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { toast } from 'react-toastify';
 
 const UpdateUserManagment = () => {
   const navigate = useNavigate();
@@ -42,6 +54,11 @@ const UpdateUserManagment = () => {
   const [selectedRole, setSelectedRole] = useState(null);
   const [selectedBusinessUnit, setBusinessUnit] = useState(null);
   const [isHead, setIsHead] = useState(false);
+  const [newPassword, setNewPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState('');
+  const [showResetPassword, setShowResetPassword] = useState(false);
+  const [isResetModalOpen, setIsResetModalOpen] = useState(false);
 
   const fetchItems = useCallback(
     async (url, dispatchType) => {
@@ -168,6 +185,47 @@ const UpdateUserManagment = () => {
     setSelectedRole(e.target.value);
   };
 
+  const handleResetPassword = async () => {
+    setPasswordError('');
+    if (!newPassword) {
+      setPasswordError('Password is required.');
+      return;
+    }
+    if (newPassword.length < 6) {
+      setPasswordError('Password must be at least 6 characters.');
+      return;
+    }
+    try {
+      const { data } = await api.patch(
+        `/api/v1/admin/user/${singleUser?._id}/reset-password`,
+        { newPassword: newPassword },
+        {
+          headers: { Authorization: `Bearer ${user?.data?.token}` },
+        },
+      );
+      if (data) {
+        setNewPassword('');
+        setPasswordError('');
+        closeResetModal();
+        toast.success('Password updated successfully!');
+      }
+    } catch (error) {
+      setPasswordError('Failed to update password.');
+    }
+  };
+
+  const openResetModal = () => {
+    setIsResetModalOpen(true);
+    setShowPassword(false);
+    setNewPassword('');
+    setPasswordError('');
+  };
+  const closeResetModal = () => {
+    setIsResetModalOpen(false);
+    setNewPassword('');
+    setPasswordError('');
+  };
+
   useEffect(() => {
     if (Array.isArray(singleUser?.merchants)) {
       setSelectedMerchants(singleUser?.merchants);
@@ -249,6 +307,55 @@ const UpdateUserManagment = () => {
                 >
                   {singleUser?.pkNumber}
                 </Text>
+              </Flex>
+              <Flex flex={1} alignItems="center" gap={2}>
+                <Text flex={0.25} color="brand.primary">
+                  Reset Password:
+                </Text>
+                <Box flex={0.75}>
+                  <Button colorScheme="orange" size="sm" onClick={openResetModal}>
+                    Reset Password
+                  </Button>
+                  <Modal isOpen={isResetModalOpen} onClose={closeResetModal} isCentered>
+                    <ModalOverlay />
+                    <ModalContent>
+                      <ModalHeader>Reset User Password</ModalHeader>
+                      <ModalCloseButton />
+                      <ModalBody>
+                        <Text mb={2} color="gray.600">Set a new password for this user. Password must be at least 6 characters.</Text>
+                        <InputGroup>
+                          <Input
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder="New Password"
+                            value={newPassword}
+                            onChange={e => setNewPassword(e.target.value)}
+                            color="black"
+                            bg="white"
+                            fontWeight="500"
+                            _placeholder={{ color: 'gray.400' }}
+                            _focus={{ color: 'black', bg: 'white' }}
+                          />
+                          <InputRightElement width="3rem">
+                            <Button h="1.5rem" size="sm" variant="ghost" onClick={() => setShowPassword((v) => !v)}>
+                              {showPassword ? <ViewOffIcon /> : <ViewIcon />}
+                            </Button>
+                          </InputRightElement>
+                        </InputGroup>
+                        {passwordError && (
+                          <Text color="red.500" fontSize="sm" mt={1}>
+                            {passwordError}
+                          </Text>
+                        )}
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button colorScheme="orange" mr={3} onClick={handleResetPassword} isDisabled={!singleUser}>
+                          Set Password
+                        </Button>
+                        <Button variant="ghost" onClick={closeResetModal}>Cancel</Button>
+                      </ModalFooter>
+                    </ModalContent>
+                  </Modal>
+                </Box>
               </Flex>
             </Flex>
             <Box border={'1px solid white'} mx={4}></Box>
