@@ -256,6 +256,9 @@ const ClientInvoice = () => {
               {invoice?.merchant === CONSTANTS.merchants.WI_MONERIS_CA && (
                 <Moneris invoiceData={invoice} storeName={'web-inventix-ca'} />
               )}
+               {invoice?.merchant === CONSTANTS.merchants.WC_MONERIS && (
+                <Moneris invoiceData={invoice} storeName={'webcraftpros'} />
+              )}
             </Flex>
             {/* <Flex justifyContent={'center'} my={20}>
             {invoice?.merchant === 'Stripe 1' && <PayArc invoiceData={invoice} />}
