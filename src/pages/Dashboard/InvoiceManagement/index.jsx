@@ -32,6 +32,7 @@ import {
   updateInvoiceAdmin,
 } from '../../../redux/invoiceSlice';
 import CONSTANTS from '../../../utils/constants';
+import { Link } from 'react-router-dom';
 
 const InvoiceComponent = () => {
   const navigate = useNavigate();
@@ -88,7 +89,7 @@ const InvoiceComponent = () => {
   const handleEditmodal = (e) => {
     setEditModalOpen(true);
     setCurrentId(e._id);
-    dispatch(getOneInvoiceAdmin({ id: e._id })).then(() => {});
+    dispatch(getOneInvoiceAdmin({ id: e._id })).then(() => { });
   };
 
   const onChangeStatus = (e) => {
@@ -120,7 +121,7 @@ const InvoiceComponent = () => {
                 placeholder="Search..."
                 value={searchInput}
                 onChange={handleInputChange}
-                // onKeyDown={handleSearch}
+              // onKeyDown={handleSearch}
               />
 
               {/* <Select
@@ -170,7 +171,7 @@ const InvoiceComponent = () => {
                 <Th color="brand.text">Merchant</Th>
                 <Th color="brand.text">Brand</Th>
                 <Th color="brand.text">User</Th>
-
+                <Th color="brand.text">Updated At</Th>
                 <Th color="brand.text"></Th>
               </Tr>
             </Thead>
@@ -220,10 +221,17 @@ const InvoiceComponent = () => {
                       {e?.user?.name}{' '}
                     </Text>
                   </Td>
+                  <Td>
+                    <Text color="brand.primary" textTransform={'capitalize'}>
+                      {e?.status === 'paid' ? new Date(e?.updatedAt).toLocaleDateString('en-GB') : 'Balance Due'}
+
+                    </Text>
+                  </Td>
 
                   <Td>
                     <HStack color="brand.primary" gap={2}>
-                      {isReadAllowed && <View onClick={() => navigate(`${e._id}`)} size={18} />}
+
+                      {isReadAllowed && <Link to={`${e._id}`}><View size={18} /></Link>}
                       {isUpdateAllowed && (
                         <Edit
                           // onClick={() => {
